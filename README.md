@@ -1,11 +1,6 @@
-# @abao_ai_bot in [Telegram](https://t.me/abao_ai_group) and [Discord](https://discord.gg/kE49hhkafu)
-
-- Leetcode Solutions in Rust
-- AdventOfCode Solutions in Rust
-- Google Solutions in Rust
-
-This project demonstrates how to create **Data Structures** and to implement **Algorithms** using programming language **Rust**
-All the solutions here are crafted with love and their performance beats 99% of other solutions on the leetcode website. To speed up your learning with generative AI, visit [abao.ai](https://abao.ai) and create a FREE account to manage your telegram @username. Add @abao_ai_bot to your telegram group with your friends to learn rust coding together. You can ask GPT, Gemini, Claude coding questions with your friends and tutors in the group together. Other Image and Video generation models are also available for paid subscribers.
+- [226 Invert Binary Tree](./leetcode/src/d2/_226_invert_binary_tree.rs)
+- [146 LRU Cache](./leetcode/src/d1/_146_lru_cache.rs)
+- [253 meeting rooms](./leetcode/src/d2/_253_meeting_rooms_2.rs)
 
 <details><summary>Data Structures</summary>
 
