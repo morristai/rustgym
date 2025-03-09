@@ -1,25 +1,29 @@
+//! https://leetcode.com/problems/meeting-rooms/description/
+
+use std::collections::BinaryHeap;
+use std::cmp::Reverse;
+
 struct Solution;
 
-use std::cmp::Ordering;
-
 impl Solution {
-    fn min_meeting_rooms(intervals: Vec<Vec<i32>>) -> i32 {
-        let mut v: Vec<(i32, i32)> = vec![];
-        for i in intervals {
-            v.push((i[0], 1));
-            v.push((i[1], -1));
+    fn min_meeting_rooms(mut intervals: Vec<Vec<i32>>) -> i32 {
+        if intervals.is_empty() {
+            return 0;
         }
-        v.sort_unstable_by(|a, b| match a.0.cmp(&b.0) {
-            Ordering::Equal => a.1.cmp(&b.1),
-            x => x,
-        });
-        let mut rooms = 0;
-        let mut max = 0;
-        for x in v {
-            rooms += x.1;
-            max = i32::max(rooms, max);
+        intervals.sort_by(|a, b| a[0].cmp(&b[0]));
+        let mut heap = BinaryHeap::new();
+        heap.push(Reverse(intervals[0][1]));
+        let mut rst = 0;
+        for interval in intervals {
+            if let Some(Reverse(min_val)) = heap.peek() {
+                if interval[0] < *min_val {
+                    rst += 1;
+                    heap.push(Reverse(*min_val));
+                }
+                heap.push(Reverse(interval[1]));
+            }
         }
-        max
+        rst
     }
 }
 

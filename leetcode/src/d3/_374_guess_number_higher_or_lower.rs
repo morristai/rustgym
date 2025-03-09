@@ -2,6 +2,7 @@ struct Solution;
 
 static mut X: i32 = 0;
 
+#[allow(static_mut_refs)]
 unsafe fn guess(num: i32) -> i32 {
     use std::cmp::Ordering::*;
     match X.cmp(&num) {
