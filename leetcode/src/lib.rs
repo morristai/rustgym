@@ -1,3 +1,4 @@
+#![feature(linked_list_cursors)] // NOTE: allow unstable features in nightly
 #![deny(clippy::all)]
 #![allow(dead_code)]
 #![allow(clippy::collapsible_if)]
