@@ -30,6 +30,13 @@ pub trait TreeMaker {
             right: None,
         })))
     }
+    fn new(val: i32) -> Rc<RefCell<TreeNode>> {
+        Rc::new(RefCell::new(TreeNode {
+            val,
+            left: None,
+            right: None,
+        }))
+    }
 }
 
 impl TreeMaker for TreeLink {}
